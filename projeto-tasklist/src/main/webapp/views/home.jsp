@@ -56,7 +56,7 @@
 						                <c:if test="${task.getStatus() eq true }">						               
 						                </c:if>
 						        	
-						        	<td><a class="btn btn-primary" href="edittask/${task.getId()}"> Editar </a></td>
+						        	<td><a class="btn btn-primary" href="edittask?id=${task.getId()}"> Editar </a></td>
 						 
 						        	<td><a class="btn btn-danger" href="removetask?id=${task.getId()}"> Deletar </a></td>
 						        </tr>        

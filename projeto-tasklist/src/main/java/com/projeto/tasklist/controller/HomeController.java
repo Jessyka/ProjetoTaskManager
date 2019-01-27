@@ -60,24 +60,21 @@ public class HomeController {
 		return "redirect:home";
 	}
 	
-	@RequestMapping("/edittask/{id}")
-	public ModelAndView edit(@PathVariable int id) {
+	@RequestMapping("/edittask")
+	public String edit(int id, Model model) {
 		taskbss = new TaskBusiness();
 		Task task = taskbss.getById(id);
 	
-		ModelAndView mv = new ModelAndView("edittask");
-		mv.addObject("task", task);
-		return mv;
+		model.addAttribute("task",task);
+		return "edittask";
 	}
 	
-	@RequestMapping(value="/editpost", method = RequestMethod.POST)
+	@RequestMapping(value ="/editpost",method = RequestMethod.POST)
 	public String editPost(Task task) {
-		
 		taskbss = new TaskBusiness();
 		taskbss.UpdateTask(task);
 		
-		return "redirect:home";
-		
+		return "redirect:home";		
 	}
 	
 }

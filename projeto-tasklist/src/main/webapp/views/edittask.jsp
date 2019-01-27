@@ -14,14 +14,15 @@
 				<h2 style="color: #375d81">Editar Tarefa</h2>
 			</div>
 		</div>
-		<form action="/projeto-tasklist/editpost" method="post" modelAttribute="task">
+		<form id="itemForm" action="${pageContext.request.contextPath }/editpost" method="post">
 		<div class="row">
 			<div class="col-md-12">
 				<div>
 					<div class="form-group">
-						<input name="id" value="${task.id}" type="hidden"></input>
-						<input name="status" value="${task.getStatus()}" type="hidden"></input>
-						<input name="date_created" value="${task.getDateCreated()}" type="hidden"></input>
+						<input type="hidden" name="id" value="${task.id}"/>
+					</div> 
+					<div class="form-group">
+						<input type="hidden" name="status" value="${task.status}"/>
 					</div>  
 				</div>
 			</div>
@@ -32,7 +33,7 @@
 				<div>
 					<div class="form-group">
 						<label>Descrição da tarefa:</label>
-						<textarea name="description" value="${task.getDescription()}" class="form-control" rows="5"></textarea>
+						<textarea name="description" value="${task.description}" class="form-control" rows="5"></textarea>
 					</div>  
 				</div>
 			</div>

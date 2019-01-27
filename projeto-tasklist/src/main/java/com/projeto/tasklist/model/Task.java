@@ -17,7 +17,7 @@ public class Task {
 	@Id 
 	@Column(name="task_id")
 	@GeneratedValue( strategy =  GenerationType.AUTO)
-	private Long id;
+	private long id;
 	
 	@Column(name = "description")
 	private String description;
@@ -29,7 +29,7 @@ public class Task {
     @Temporal(TemporalType.DATE)
     private Date date_created;
 	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 	
@@ -43,6 +43,10 @@ public class Task {
 	
 	public Date getDateCreated() {
 		return date_created;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	public void setDescription(String description) {
